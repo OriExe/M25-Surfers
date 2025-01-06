@@ -457,7 +457,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 51
   MaxDistance: 1.38
-  jumpStrength: 4.07
+  jumpStrength: 8
   targetHorizontalPosition: 1
   horizontalMovementSpeed: 2.8
 --- !u!1 &637290366

@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 checkPosition = transform.position + new Vector3(0f, 0f, 0f);
 
-        isGrounded = Physics.Raycast(checkPosition, -transform.up, out hit, MaxDistance, groundMask);
-        Debug.Log(hit.collider.name);
+        isGrounded = Physics.Raycast(checkPosition, -transform.up, MaxDistance, groundMask);
+ 
     }
 }
