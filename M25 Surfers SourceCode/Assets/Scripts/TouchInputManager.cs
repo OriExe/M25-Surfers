@@ -85,12 +85,12 @@ public class TouchInputManager : MonoBehaviour
                         swipeMadeHorizontal = true;
                         if (amountDraggedHorizontal > 0)
                         {
-                            Debug.LogWarning("Moved to right");
+                            Debug.Log("Moved to right");
                             FingerplayerSwipeHoriz = FingerHorizontalPos.right; 
                         }
                         else
                         {
-                            Debug.LogWarning("Moved to left");
+                            Debug.Log("Moved to left");
                             FingerplayerSwipeHoriz = FingerHorizontalPos.left; 
                         }
                     }
@@ -99,12 +99,12 @@ public class TouchInputManager : MonoBehaviour
                         swipeMadeVertical = true;
                         if (amountDraggedVertical > 0)
                         {
-                            Debug.LogWarning("Moved to up");
+                            Debug.Log("Moved to up");
                             FingerplayerSwipeVertic = FingerVerticalPos.up; 
                         }
                         else
                         {
-                            Debug.LogWarning("Moved to down");
+                            Debug.Log("Moved to down");
                             FingerplayerSwipeVertic = FingerVerticalPos.Slide; 
                         }
                     }

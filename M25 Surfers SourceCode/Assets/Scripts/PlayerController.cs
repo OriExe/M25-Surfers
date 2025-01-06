@@ -57,6 +57,8 @@ public class PlayerController : MonoBehaviour
     #endregion
     // Start is called before the first frame update
 
+    [SerializeField]
+    string groundTag = "Ground";
     public static PlayerController instance { get; private set; }
 
     private void Awake()
@@ -118,5 +120,13 @@ public class PlayerController : MonoBehaviour
 
         isGrounded = Physics.Raycast(checkPosition, -transform.up, MaxDistance, groundMask);
  
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!collision.gameObject.tag.Equals(groundTag))
+        {
+            GameManager.Instance.playerDeath();
+        }
     }
 }
