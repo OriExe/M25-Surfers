@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     List<GameObject> activeObstacles = new List<GameObject>();
+
+    int currentObj = 0;
     #endregion
 
     #region Difficulty
@@ -72,13 +74,17 @@ public class GameManager : MonoBehaviour
 
         ControlGameState(false);
     }
+    /// <summary>
+    /// Spawn platform
+    /// </summary>
     void SpawnObstacle()
     {
+        GameObject temp = ObjectPool.instance.GetPooledObject();
+        Debug.Log("Running 1");
         // Are there too much obstacles
-        if (ObjectPool.instance.GetPooledObject() != null
-            && ObjectPool.instance.CheckCurrentActiveObsticleCount() < maxObstaclesAtOnce)
+        if (temp != null && ObjectPool.instance.CheckCurrentActiveObsticleCount() < maxObstaclesAtOnce)
         {
-            GameObject temp = ObjectPool.instance.GetPooledObject();;
+            Debug.Log("Running 2");
 
             int spawnedPosition = Random.Range(0, 3);
 
@@ -88,8 +94,22 @@ public class GameManager : MonoBehaviour
 
             activeObstacles.Add(temp);
 
-            Invoke("SpawnObstacle", delayBetweenObstacleSpawn / currentDifficulty); //Makes the game move faster
+             //Makes the game move faster
         }
+        else if (ObjectPool.instance.CheckCurrentActiveObsticleCount() >= maxObstaclesAtOnce)
+        {
+            currentObj++;
+            currentObj = currentObj % maxObstaclesAtOnce;
+            print(currentObj); 
+
+            temp = activeObstacles[currentObj];
+            Debug.Log("Running 3");
+
+            int spawnedPosition = Random.Range(0, 3);
+
+            temp.transform.position = new Vector3(obstaclePositions[spawnedPosition].position.x, 0, obstacleSpawnDistance);
+        }
+        Invoke("SpawnObstacle", delayBetweenObstacleSpawn / currentDifficulty);
     }
 
     
@@ -107,11 +127,11 @@ public class GameManager : MonoBehaviour
         gameStarted = state;
         if (state)
         {
-            Invoke("SpawnObstacle", delayBetweenObstacleSpawn);
+            SpawnObstacle();
         }
         else
         {
-            CancelInvoke("SpawnObstacle");
+           
         }
     }
 
