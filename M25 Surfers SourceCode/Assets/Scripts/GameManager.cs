@@ -17,9 +17,6 @@ public class GameManager : MonoBehaviour
    
 
     [SerializeField]
-    int maxObstaclesAtOnce = 5;
-
-    [SerializeField]
     float delayBetweenObstacleSpawn = 5f;
 
     [SerializeField]
@@ -82,7 +79,7 @@ public class GameManager : MonoBehaviour
         GameObject temp = ObjectPool.instance.GetPooledObject();
         Debug.Log("Running 1");
         // Are there too much obstacles
-        if (temp != null && ObjectPool.instance.CheckCurrentActiveObsticleCount() < maxObstaclesAtOnce)
+        if (temp != null && ObjectPool.instance.CheckCurrentActiveObsticleCount() < ObjectPool.instance.getNoOfObjects())
         {
             Debug.Log("Running 2");
 
@@ -96,10 +93,10 @@ public class GameManager : MonoBehaviour
 
              //Makes the game move faster
         }
-        else if (ObjectPool.instance.CheckCurrentActiveObsticleCount() >= maxObstaclesAtOnce)
+        else if (ObjectPool.instance.CheckCurrentActiveObsticleCount() >= ObjectPool.instance.getNoOfObjects())
         {
             currentObj++;
-            currentObj = currentObj % maxObstaclesAtOnce;
+            currentObj = currentObj % ObjectPool.instance.getNoOfObjects();
             print(currentObj); 
 
             temp = activeObstacles[currentObj];

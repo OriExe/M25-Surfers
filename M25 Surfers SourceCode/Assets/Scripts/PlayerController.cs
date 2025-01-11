@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField]
     Transform[] runningPositons = new Transform[3];
-
     Rigidbody rb;
     #region Jump Values
     bool isGrounded = false;
@@ -25,6 +24,8 @@ public class PlayerController : MonoBehaviour
     float jumpStrength;
 #endregion
 
+    //Animator
+    private Animator animator;
     //Location of different sides of the map
 
     #region Movement Values
@@ -75,6 +76,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -106,6 +108,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Can't jump");
             return;
         }
+        animator.SetTrigger("Jump");
             
         rb.AddForce(Vector3.up * jumpStrength, ForceMode.Impulse);
     }

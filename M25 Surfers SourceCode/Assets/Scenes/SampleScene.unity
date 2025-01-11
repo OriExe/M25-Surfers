@@ -466,7 +466,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
@@ -492,7 +492,7 @@ MonoBehaviour:
   MaxDistance: 1.38
   jumpStrength: 16
   targetHorizontalPosition: 1
-  horizontalMovementSpeed: 2.8
+  horizontalMovementSpeed: 4.5
   groundTag: Ground
 --- !u!1 &713746950
 GameObject:
@@ -552,7 +552,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  maxObstaclesAtOnce: 20
   delayBetweenObstacleSpawn: 3
   obstaclePositions:
   - {fileID: 444296466}
@@ -593,8 +592,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObjects: []
-  objectToPool: {fileID: 4786607409078760495, guid: 1fa637cf57b36dd44a88244b2d654565,
-    type: 3}
+  objectToPool:
+    Object: {fileID: 7769690492283750692, guid: f40e52a0c26735a46b681671fb2baa40,
+      type: 3}
+    Amount: 7
   amountToPool: 20
 --- !u!114 &713746954
 MonoBehaviour:
@@ -661,7 +662,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2

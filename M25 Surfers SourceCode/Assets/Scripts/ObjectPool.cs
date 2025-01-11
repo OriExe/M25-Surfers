@@ -2,14 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class obstacle  {
+    [SerializeField] private GameObject Object;
+    [SerializeField] private int Amount;
+
+    public GameObject GetObj()
+    {
+        return Object;
+    }
+    public int GetAmount()
+    {
+        return Amount;
+    }
+}
+
 public class ObjectPool : MonoBehaviour
 {
 
     [SerializeField]
     List<GameObject> pooledObjects;
 
-    [SerializeField]
-    GameObject objectToPool;
+    [SerializeField] private obstacle objectToPool;
 
     [SerializeField]
     int amountToPool;
@@ -29,13 +43,14 @@ public class ObjectPool : MonoBehaviour
     }
     private void Start()
     {
+        amountToPool = objectToPool.GetAmount();
         pooledObjects = new List<GameObject>();
 
         GameObject tmp;
 
         for (int i = 0; i < amountToPool; i++)
         {
-            tmp = Instantiate(objectToPool);
+            tmp = Instantiate(objectToPool.GetObj());
 
             tmp.SetActive(false);
 
@@ -74,5 +89,10 @@ public class ObjectPool : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public int getNoOfObjects()
+    {
+        return amountToPool;
     }
 }
