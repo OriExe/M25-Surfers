@@ -15,6 +15,11 @@ public class obstacle  {
     {
         return Amount;
     }
+    //To ensure it doesn't add more objects than necessary
+    public void removeOne()
+    {
+        Amount--;
+    }
 }
 
 public class ObjectPool : MonoBehaviour
@@ -23,7 +28,7 @@ public class ObjectPool : MonoBehaviour
     [SerializeField]
     List<GameObject> pooledObjects;
 
-    [SerializeField] private obstacle objectToPool;
+    [SerializeField] private obstacle[] objectToPool;
 
     [SerializeField]
     int amountToPool;
@@ -43,18 +48,30 @@ public class ObjectPool : MonoBehaviour
     }
     private void Start()
     {
-        amountToPool = objectToPool.GetAmount();
+        int tempAmountToPool = 0;
+        //Counts up how much objects are needed
+        foreach (var obj in objectToPool)
+        {
+            tempAmountToPool+= obj.GetAmount();
+        }
+        amountToPool = tempAmountToPool;
         pooledObjects = new List<GameObject>();
 
         GameObject tmp;
 
-        for (int i = 0; i < amountToPool; i++)
+        for (int i = 0; i < amountToPool; i++) 
         {
-            tmp = Instantiate(objectToPool.GetObj());
+            int randomNum = Random.Range(0, objectToPool.Length);
+            while (objectToPool[randomNum].GetAmount() <= 0) //Max amount of objects used
+            {
+                randomNum = Random.Range(0, objectToPool.Length);
+            }
+            tmp = Instantiate(objectToPool[randomNum].GetObj());
 
             tmp.SetActive(false);
 
             pooledObjects.Add(tmp);
+            objectToPool[randomNum].removeOne();
         }
 
     }
