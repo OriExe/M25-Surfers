@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 4080312293609642034}
   - component: {fileID: 5680178979558455264}
   - component: {fileID: 5635609610629380985}
+  - component: {fileID: 7387043757580174160}
   m_Layer: 0
   m_Name: Hatchback
   m_TagString: Untagged
@@ -466,7 +467,22 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7387043757580174160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769690492283750692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b72fc4459dd67944969fa8632fafdfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDriving: 0
+  speed: 1
+  rb: {fileID: 5635609610629380985}

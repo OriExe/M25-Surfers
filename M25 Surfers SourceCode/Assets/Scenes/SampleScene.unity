@@ -182,7 +182,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 131.9
+  field of view: 101.6
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -209,7 +209,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.99, y: 3.8, z: -8.8}
+  m_LocalPosition: {x: 1.99, y: 2.486, z: -8.675}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -482,6 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bfe23fe044d49c439f2d44c805e23bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraPos: {fileID: 330585546}
   runningPositons:
   - {fileID: 444296466}
   - {fileID: 1274697136}
@@ -490,9 +491,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 51
   MaxDistance: 1.38
-  jumpStrength: 16
+  jumpStrength: 12.6
   targetHorizontalPosition: 1
-  horizontalMovementSpeed: 4.5
+  horizontalMovementSpeed: 12.5
   groundTag: Ground
 --- !u!1 &713746950
 GameObject:
@@ -528,10 +529,10 @@ MonoBehaviour:
   onDeathEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519577601}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 519577604}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: playerIsDead
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -552,13 +553,61 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1555934843}
+        m_TargetAssemblyTypeName: MovingRoad, Assembly-CSharp
+        m_MethodName: stopRoadMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 713746953}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 713746951}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 519577604}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenObstacleSpawn: 3
   obstaclePositions:
   - {fileID: 444296466}
   - {fileID: 1274697136}
   - {fileID: 768438684}
   obstacleSpawnDistance: 20
-  obstacleMovementSpeed: 5
+  obstacleMovementSpeed: 8
   activeObstacles: []
   currentDifficulty: 1
   rateDifficulty: 0.5

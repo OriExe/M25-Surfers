@@ -18,4 +18,9 @@ public class MovingRoad : MonoBehaviour
         roadMat.materials[0].mainTextureOffset = new Vector2(0, roadMat.materials[0].mainTextureOffset.y%100 + speed / 10);
         
     }
+
+    public void stopRoadMovement()
+    {
+        enabled = false;
+    }
 }

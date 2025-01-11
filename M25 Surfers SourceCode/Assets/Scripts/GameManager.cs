@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -76,6 +77,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void SpawnObstacle()
     {
+        if (gameStarted == false)
+            return;
         GameObject temp = ObjectPool.instance.GetPooledObject();
         Debug.Log("Running 1");
         // Are there too much obstacles
@@ -83,7 +86,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Running 2");
 
-            int spawnedPosition = Random.Range(0, 3);
+            int spawnedPosition = UnityEngine.Random.Range(0, 3);
 
             temp.transform.position = new Vector3(obstaclePositions[spawnedPosition].position.x, 0, obstacleSpawnDistance);
 
@@ -102,9 +105,17 @@ public class GameManager : MonoBehaviour
             temp = activeObstacles[currentObj];
             Debug.Log("Running 3");
 
-            int spawnedPosition = Random.Range(0, 3);
+            int spawnedPosition = UnityEngine.Random.Range(0, 3);
 
             temp.transform.position = new Vector3(obstaclePositions[spawnedPosition].position.x, 0, obstacleSpawnDistance);
+        }
+        try
+        {
+            temp.GetComponent<ObstableAction>().action();
+        }
+        catch (NullReferenceException) 
+        {
+            print("Object does not have action");
         }
         Invoke("SpawnObstacle", delayBetweenObstacleSpawn / currentDifficulty);
     }
@@ -128,7 +139,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-           
+            gameStarted = false;
         }
     }
 

@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public enum playerPositions { left, middle, right }
-    
+
+    [SerializeField] private Transform CameraPos;
     [SerializeField]
     Transform[] runningPositons = new Transform[3];
     Rigidbody rb;
@@ -98,6 +99,9 @@ public class PlayerController : MonoBehaviour
             Vector3 targetPosition = new Vector3(runningPositons[playerHorizontalPostionNum].position.x, transform.position.y, transform.position.z);
 
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementStepPerFrame);
+
+
+            CameraPos.position = Vector3.MoveTowards(CameraPos.position, new Vector3(runningPositons[playerHorizontalPostionNum].position.x, CameraPos.position.y, CameraPos.position.z), movementStepPerFrame);
         }
     }
 
@@ -131,5 +135,11 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.playerDeath();
         }
+    }
+
+    public void playerIsDead()
+    {
+        animator.SetBool("IsDead", true);
+        animator.applyRootMotion = true;
     }
 }
