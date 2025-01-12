@@ -1325,8 +1325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0765fd99c6953904caccec1681403bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  percentageThressholH: 18
-  percentageThressholV: 18
+  percentageThressholH: 27
+  percentageThressholV: 14
 --- !u!4 &1734784073
 Transform:
   m_ObjectHideFlags: 0
