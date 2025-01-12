@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
-public class CarAction : ObstableAction
+public class TruckAction : ObstableAction
 {
     [SerializeField] private bool isDriving;
     [SerializeField] private float speed;

@@ -96,7 +96,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 0fe021759d7b9764890cf36a4348e23c,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1056,6 +1057,74 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1555934843}
   m_SourcePrefab: {fileID: 100100000, guid: a7e9891f686821e46ade0477d65446f6, type: 3}
+--- !u!1001 &1363846995
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6026880677805947416, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.0973387
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026880677805947416, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6975145
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026880677805947416, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 72.984795
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026880677805947416, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026880677805947416, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026880677805947416, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026880677805947416, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026880677805947416, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026880677805947416, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026880677805947416, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347783130161285131, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_Name
+      value: Truck_Skin02
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a79eed4aa26be214694b482af97baf38, type: 3}
 --- !u!1 &1555934838 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 180412, guid: a7e9891f686821e46ade0477d65446f6,
@@ -1728,3 +1797,4 @@ SceneRoots:
   - {fileID: 2117368753}
   - {fileID: 1971918232}
   - {fileID: 1293707296}
+  - {fileID: 1363846995}
