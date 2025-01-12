@@ -9,16 +9,19 @@ public class CarAction : ObstableAction
     [SerializeField] private bool isDriving;
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private GameObject lighting;
     public override void action()
     {
         int randomNum = Random.Range(0, 100);
         if (randomNum < 70)
         {
             isDriving = false;
+            lighting.SetActive(false);
         }
         else if (randomNum >= 70)
         {
             isDriving = true;
+            lighting.SetActive(true);
         }
     }
 
