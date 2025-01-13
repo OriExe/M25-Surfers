@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     //Animator
     private Animator animator;
     //Location of different sides of the map
-
+    [SerializeField] private GameObject dustParticles;
     #region Movement Values
     //Player Left and Right Position
     [SerializeField]
@@ -126,6 +126,8 @@ public class PlayerController : MonoBehaviour
         Vector3 checkPosition = transform.position + new Vector3(0f, 0f, 0f);
 
         isGrounded = Physics.Raycast(checkPosition, -transform.up, MaxDistance, groundMask);
+
+        dustParticles.SetActive(isGrounded);
  
     }
 

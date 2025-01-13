@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8341183866521419663
 Transform:
   m_ObjectHideFlags: 0
@@ -384,7 +384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4549906305896442776
 Transform:
   m_ObjectHideFlags: 0
@@ -582,6 +582,7 @@ GameObject:
   - component: {fileID: 5680178979558455264}
   - component: {fileID: 5635609610629380985}
   - component: {fileID: 4789433776593097034}
+  - component: {fileID: 674212872297061106}
   m_Layer: 0
   m_Name: TurningCar
   m_TagString: Untagged
@@ -598,7 +599,7 @@ Transform:
   m_GameObject: {fileID: 7769690492283750692}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.00000025815, y: 0.26011, z: -0.030786}
+  m_LocalPosition: {x: 0.00000025815, y: 0.2, z: -0.030786}
   m_LocalScale: {x: 0.69064, y: 0.69064, z: 0.69064}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -730,3 +731,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &674212872297061106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769690492283750692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a8926c86c75724f827738f4b3a4415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6.8
+  rb: {fileID: 5635609610629380985}
+  animator: {fileID: 4789433776593097034}
+  turningSpeed: 0.1
+  waitTime: 1.5

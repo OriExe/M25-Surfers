@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,6 +24,25 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Transform[] obstaclePositions = new Transform[3];
 
+    /// <summary>
+    /// Gets the all possible positions of the player. Due to how this gets this value it is recommend to make a another variable to store the results of this in to improve peformance.
+    /// 
+    /// 0 == Left
+    /// 1 == Middle
+    /// 2 == Right 
+    /// </summary>
+    public static Vector3[] PlayerPositionsStatic
+    {
+        get {
+            Vector3[] temp = new Vector3[3];
+            for (int i = 0; i < Instance.obstaclePositions.Length; i++)
+            {
+                temp[i] = Instance.obstaclePositions[i].position;
+            }
+            return temp;
+            }
+        private set {  }
+    }
     [SerializeField]
     float obstacleSpawnDistance = 20f;
 
@@ -88,7 +108,7 @@ public class GameManager : MonoBehaviour
 
             int spawnedPosition = UnityEngine.Random.Range(0, 3);
 
-            temp.transform.position = new Vector3(obstaclePositions[spawnedPosition].position.x, 0, obstacleSpawnDistance);
+            temp.transform.position = new Vector3(obstaclePositions[spawnedPosition].position.x, temp.transform.position.y, obstacleSpawnDistance);
 
             temp.SetActive(true);
 
@@ -107,7 +127,7 @@ public class GameManager : MonoBehaviour
 
             int spawnedPosition = UnityEngine.Random.Range(0, 3);
 
-            temp.transform.position = new Vector3(obstaclePositions[spawnedPosition].position.x, 0, obstacleSpawnDistance);
+            temp.transform.position = new Vector3(obstaclePositions[spawnedPosition].position.x, temp.transform.position.y, obstacleSpawnDistance);
         }
         try
         {
@@ -121,7 +141,7 @@ public class GameManager : MonoBehaviour
     }
 
     
-
+    //Move Objects repeatly
     void MoveObstacles()
     {
         foreach (GameObject obstacle in activeObstacles)

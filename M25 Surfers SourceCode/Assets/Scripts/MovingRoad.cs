@@ -15,7 +15,7 @@ public class MovingRoad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        roadMat.materials[0].mainTextureOffset = new Vector2(0, roadMat.materials[0].mainTextureOffset.y%100 + speed / 10);
+        roadMat.materials[0].mainTextureOffset = new Vector2(0, roadMat.materials[0].mainTextureOffset.y%100 + speed / -10);
         
     }
 
