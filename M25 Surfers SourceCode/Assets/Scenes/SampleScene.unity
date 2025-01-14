@@ -11556,6 +11556,11 @@ MonoBehaviour:
   - Object: {fileID: 4251336291629136058, guid: ce2f737647167e34c930358a9978d0f3,
       type: 3}
     Amount: 4
+  - Object: {fileID: 7809234832518732847, guid: 2b9f9c2ad618b0e4994ac13b4e9ba69b,
+      type: 3}
+    Amount: 1
+  - Object: {fileID: 271006769610507563, guid: 12c119d1754f8794cb9928207b2e3c78, type: 3}
+    Amount: 1
   amountToPool: 20
 --- !u!114 &713746954
 MonoBehaviour:

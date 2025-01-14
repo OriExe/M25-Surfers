@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4777522372696615308}
+  - component: {fileID: 337078321313381815}
   m_Layer: 0
   m_Name: PowerUps
   m_TagString: Untagged
@@ -32,6 +33,27 @@ Transform:
   - {fileID: 2096892179099072295}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &337078321313381815
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5475466064143785618}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.11, y: 2.15, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6610994391155414034
 GameObject:
   m_ObjectHideFlags: 0
@@ -4929,7 +4951,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2096892179099072295}
-  - component: {fileID: 6126864053128987326}
   - component: {fileID: 4744097893325941620}
   m_Layer: 0
   m_Name: PowerUp
@@ -4955,27 +4976,6 @@ Transform:
   - {fileID: 619174400462592436}
   m_Father: {fileID: 4777522372696615308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6126864053128987326
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030647771671034130}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.0131192, y: 1.9953487, z: 1}
-  m_Center: {x: -0.008472681, y: 0.08017206, z: 0}
 --- !u!95 &4744097893325941620
 Animator:
   serializedVersion: 5

@@ -61,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 5475466064143785618, guid: 3bd22334418db5147bda9f1fc0f19c78,
         type: 3}
       propertyPath: m_Name
-      value: PowerUps Variant
+      value: Beer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

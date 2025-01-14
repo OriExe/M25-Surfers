@@ -10,13 +10,12 @@ public class Beer : PowerUp
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && !used)
         {
             PlayerController.instance.invisibiltyFrames = 999;
             powerup.SetActive(false);
 
         }
-
     }
 
     

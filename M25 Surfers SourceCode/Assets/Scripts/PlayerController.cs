@@ -33,8 +33,6 @@ public class PlayerController : MonoBehaviour
 
     private int InvisFrame = 0;
     public int invisibiltyFrames 
-
-
     { 
        private get { return InvisFrame; }
        set 
@@ -168,7 +166,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.tag.Equals(groundTag) && invisibiltyFrames > 0)
+        if (!collision.gameObject.tag.Equals(groundTag) && invisibiltyFrames <= 0)
         {
             GameManager.Instance.playerDeath();
         }

@@ -6,6 +6,7 @@ public class PowerUp : ObstableAction
 {
     [SerializeField] private int length; //Length of powerup
     [SerializeField] protected GameObject powerup;
+    protected bool used = false;
     private void OnTriggerEnter(Collider other)
     {
        
@@ -17,5 +18,7 @@ public class PowerUp : ObstableAction
     public override void action()
     {
         powerup.SetActive(true);
+        used = false;
     }
+
 }
