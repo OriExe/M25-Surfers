@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class TouchInputManager : MonoBehaviour
 {
@@ -11,9 +12,25 @@ public class TouchInputManager : MonoBehaviour
     /// 1 is Vertical
     /// </summary>
     private float[] pixelSwipeThreadholdNumber = { 0f, 1f };
-    [Range(1, 100)]
+
+    [SerializeField] private LineRenderer DebugLine;
+    [Range(0f, 100f)]
     [SerializeField] private int percentageThressholH = 18;
-    [SerializeField] private int percentageThressholV = 18;
+    [Range(0f, 100f)]
+    [SerializeField]private int percentageThressholV = 18;
+    
+    #region Touch Movement
+
+    Vector2 StartTouchPosition;
+
+    bool swipeMadeHorizontal = false;
+    bool swipeMadeVertical = false;
+
+
+    bool swipeCurrentAppliedHorizontal = false;
+    bool swipeCurrentAppliedVertical = false;
+
+    #endregion
     #endregion
 
     #region Player Position (Enum)
@@ -39,29 +56,21 @@ public class TouchInputManager : MonoBehaviour
     /// </summary>
     FingerVerticalPos FingerplayerSwipeVertic = FingerVerticalPos.none;
     #endregion
-    #region Touch Movement
-
-    Vector2 StartTouchPosition;
-
-    bool swipeMadeHorizontal = false;
-    bool swipeMadeVertical = false;
-
-
-    bool swipeCurrentAppliedHorizontal = false;
-    bool swipeCurrentAppliedVertical = false;
-
-    #endregion
     // Start is called before the first frame update
     void Start()
     {
         //Calculates number of pixels the player needs to swipe to register input
-        pixelSwipeThreadholdNumber[0] = Screen.width * (percentageThressholH / 100);
-        pixelSwipeThreadholdNumber[1] = Screen.height * (percentageThressholV / 100);
+        pixelSwipeThreadholdNumber[0] = Screen.width * (percentageThressholH / 100f);
+        pixelSwipeThreadholdNumber[1] = Screen.height * (percentageThressholV / 100f);
+        print(pixelSwipeThreadholdNumber[0]);
+        print(pixelSwipeThreadholdNumber[1]);
     }
 
+  
     // Update is called once per frame
     void Update()
     {
+
         if (Input.touchCount > 0)
         {
             //Stores the value of the first finger to touch the screen
@@ -86,12 +95,15 @@ public class TouchInputManager : MonoBehaviour
                         if (amountDraggedHorizontal > 0)
                         {
                             Debug.Log("Moved to right");
-                            FingerplayerSwipeHoriz = FingerHorizontalPos.right; 
+                            FingerplayerSwipeHoriz = FingerHorizontalPos.right;
+                            DebugLine.material.color = Color.yellow;
                         }
                         else
                         {
                             Debug.Log("Moved to left");
-                            FingerplayerSwipeHoriz = FingerHorizontalPos.left; 
+                            FingerplayerSwipeHoriz = FingerHorizontalPos.left;
+                            DebugLine.material.color = Color.yellow;
+                            
                         }
                     }
                     if (Mathf.Abs(amountDraggedVertical) > pixelSwipeThreadholdNumber[1] && (!swipeMadeVertical && !swipeMadeHorizontal))
@@ -100,12 +112,14 @@ public class TouchInputManager : MonoBehaviour
                         if (amountDraggedVertical > 0)
                         {
                             Debug.Log("Moved to up");
-                            FingerplayerSwipeVertic = FingerVerticalPos.up; 
+                            FingerplayerSwipeVertic = FingerVerticalPos.up;
+                            DebugLine.material.color = Color.yellow;
                         }
                         else
                         {
                             Debug.Log("Moved to down");
-                            FingerplayerSwipeVertic = FingerVerticalPos.Slide; 
+                            FingerplayerSwipeVertic = FingerVerticalPos.Slide;
+                            DebugLine.material.color = Color.yellow;
                         }
                     }
                     break;
