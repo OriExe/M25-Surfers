@@ -7,6 +7,6 @@ public class MainMenuPage : MonoBehaviour
 {
     public void playGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
