@@ -11,6 +11,8 @@ public class TuringCarAction : ObstableAction
     [SerializeField] private float turningSpeed;
     [SerializeField] private float waitTime = 1.5f;
 
+
+
     /*
     private void Start() //Debug Code
     {
@@ -82,7 +84,7 @@ public class TuringCarAction : ObstableAction
 
     IEnumerator startTurning(float MoveTo)
     {
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(waitTime / GameManager.Instance.getDifficulty());
         Vector3 newPosition = new Vector3(MoveTo, transform.position.y, transform.position.z); //Sets new position
         while (Vector3.Distance(newPosition, transform.position) > 0.2f) 
         {
@@ -93,9 +95,5 @@ public class TuringCarAction : ObstableAction
         }
 
     }
-    private void Update()
-    {
-        rb.velocity = -Vector3.forward * speed;
-    
-    }
+  
 }

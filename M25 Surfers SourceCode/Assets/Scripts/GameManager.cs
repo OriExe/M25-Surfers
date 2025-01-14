@@ -172,6 +172,11 @@ public class GameManager : MonoBehaviour
 
         rateDifficulty -= Time.deltaTime * rateDecreaseSpeed;
 
-        rateDifficulty = Mathf.Clamp(rateDifficulty,rateRange.x,rateRange.y);
+        rateDifficulty = Mathf.Clamp(rateDifficulty, rateRange.x, rateRange.y);
+    }
+
+    public float getDifficulty()
+    {
+        return currentDifficulty;
     }
 }
