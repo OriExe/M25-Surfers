@@ -23,8 +23,43 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     float jumpStrength;
-#endregion
+    #endregion
 
+    #region PowerUps
+    [Header("Powerup Values")]
+    [SerializeField] private GameObject Bus; //Actually a police car
+    [SerializeField]private ParticleSystem BeerEffect;
+    [SerializeField] private GameObject playerMesh;
+
+    private int InvisFrame = 0;
+    public int invisibiltyFrames 
+
+
+    { 
+       private get { return InvisFrame; }
+       set 
+       { 
+            if (value <=0)
+            {
+                normalState();
+                InvisFrame = value; //Puts player back to normal state
+            }
+            else if (value == 1) //If player picks up Bus
+            {
+                InvisFrame = value;
+                animator.enabled = false;
+                playerMesh.SetActive(false);
+                Bus.SetActive(true);
+            }
+            else if (value > 1)
+            {
+                InvisFrame = value;
+                BeerEffect.Play();
+            }
+       }
+            } //How much hits the player can take
+    #endregion
+    [Space]
     //Animator
     private Animator animator;
     //Location of different sides of the map
@@ -133,9 +168,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.tag.Equals(groundTag))
+        if (!collision.gameObject.tag.Equals(groundTag) && invisibiltyFrames > 0)
         {
             GameManager.Instance.playerDeath();
+        }
+
+        if (invisibiltyFrames > 0)
+        {
+            invisibiltyFrames--;
         }
     }
 
@@ -144,4 +184,14 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("IsDead", true);
         animator.applyRootMotion = true;
     }
+
+    //Turns off invisibility
+    private void normalState()
+    {
+        animator.enabled = true;
+        BeerEffect.Stop();
+        Bus.SetActive(false);
+        playerMesh.SetActive(true);
+    }
+
 }

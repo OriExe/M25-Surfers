@@ -11,7 +11,7 @@ public class changeToTurning : MonoBehaviour
     // Update is called once per frame
     private void Awake()
     {
-        timeRemaining = Random.Range(75f, 250f);
+        timeRemaining = Random.Range(45f, 110f);
     }
     void Update()
     {
