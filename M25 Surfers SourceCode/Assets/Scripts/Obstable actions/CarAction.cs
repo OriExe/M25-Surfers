@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
@@ -12,6 +11,7 @@ public class CarAction : ObstableAction
     [SerializeField] private GameObject lighting;
     public override void action()
     {
+        if (enabled == false) return;
         int randomNum = Random.Range(0, 100);
         if (randomNum < 70)
         {

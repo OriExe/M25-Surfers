@@ -42,7 +42,7 @@ public class ScoreManager : MonoBehaviour
         currentGameDuration += Time.deltaTime;
 
         score += currentGameDuration * timeMultiplier;
-        ScoreText.text = score.ToString();
+        ScoreText.text = Mathf.RoundToInt(score).ToString();
     }
 
     public float GetHighScore()

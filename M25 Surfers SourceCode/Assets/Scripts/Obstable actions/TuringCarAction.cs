@@ -12,7 +12,10 @@ public class TuringCarAction : ObstableAction
     [SerializeField] private float waitTime = 1.5f;
 
 
-
+    private void OnDisable()
+    {
+        
+    }
     /*
     private void Start() //Debug Code
     {
@@ -26,6 +29,8 @@ public class TuringCarAction : ObstableAction
     /// </summary>
     public override void action()
     {
+        if (enabled == false)
+            return;
         #region Where is the object
         int direction = 0; //-1 is turn left, 1 is turn right (From view of player)
         Vector3[] possiblePositions = GameManager.PlayerPositionsStatic;
