@@ -74,6 +74,8 @@ public class ObjectPool : MonoBehaviour
             objectToPool[randomNum].removeOne();
         }
 
+        GameManager.Instance.ControlGameState(true);
+
     }
 
     public GameObject GetPooledObject()

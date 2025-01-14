@@ -10,6 +10,8 @@ public class TruckAction : ObstableAction
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private GameObject lighting;
+    [SerializeField] private bool truckHasCoins;
+    [SerializeField] private CoinAction coins;
     public override void action()
     {
         int randomNum = Random.Range(0, 100);
@@ -22,6 +24,11 @@ public class TruckAction : ObstableAction
         {
             isDriving = true;
             lighting.SetActive(true);
+        }
+
+        if (truckHasCoins)
+        {
+            coins.action();
         }
     }
 

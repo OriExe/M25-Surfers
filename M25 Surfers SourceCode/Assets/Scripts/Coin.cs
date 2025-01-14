@@ -15,9 +15,12 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        pop.Play();
-        bc.enabled = false;
-        Mesh.enabled = false;
+        if (other.tag == "Player")
+        {
+            pop.Play();
+            bc.enabled = false;
+            Mesh.enabled = false;
+        }
     }
 
     public void showMesh()

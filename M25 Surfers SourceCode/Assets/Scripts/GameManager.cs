@@ -79,7 +79,11 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("Duplicate Detected");
         }
+
+       
     }
+
+  
     private void Update()
     {
         MoveObstacles();
