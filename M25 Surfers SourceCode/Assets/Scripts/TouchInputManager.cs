@@ -13,7 +13,6 @@ public class TouchInputManager : MonoBehaviour
     /// </summary>
     private float[] pixelSwipeThreadholdNumber = { 0f, 1f };
 
-    [SerializeField] private LineRenderer DebugLine;
     [Range(0f, 100f)]
     [SerializeField] private int percentageThressholH = 18;
     [Range(0f, 100f)]
@@ -96,13 +95,13 @@ public class TouchInputManager : MonoBehaviour
                         {
                             Debug.Log("Moved to right");
                             FingerplayerSwipeHoriz = FingerHorizontalPos.right;
-                            DebugLine.material.color = Color.yellow;
+                     
                         }
                         else
                         {
                             Debug.Log("Moved to left");
                             FingerplayerSwipeHoriz = FingerHorizontalPos.left;
-                            DebugLine.material.color = Color.yellow;
+      
                             
                         }
                     }
@@ -113,13 +112,13 @@ public class TouchInputManager : MonoBehaviour
                         {
                             Debug.Log("Moved to up");
                             FingerplayerSwipeVertic = FingerVerticalPos.up;
-                            DebugLine.material.color = Color.yellow;
+           
                         }
                         else
                         {
                             Debug.Log("Moved to down");
                             FingerplayerSwipeVertic = FingerVerticalPos.Slide;
-                            DebugLine.material.color = Color.yellow;
+        
                         }
                     }
                     break;
