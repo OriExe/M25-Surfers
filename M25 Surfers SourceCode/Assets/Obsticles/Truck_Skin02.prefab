@@ -1191,6 +1191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDriving: 0
-  speed: 7.07
+  speed: 5.95
   rb: {fileID: 1646484328387989774}
   lighting: {fileID: 1752116787250796413}
+  truckHasCoins: 0
+  coins: {fileID: 0}

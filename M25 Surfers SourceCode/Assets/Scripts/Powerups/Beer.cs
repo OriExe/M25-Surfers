@@ -14,7 +14,7 @@ public class Beer : PowerUp
         {
             PlayerController.instance.invisibiltyFrames = 999;
             powerup.SetActive(false);
-
+            used = true;
         }
     }
 

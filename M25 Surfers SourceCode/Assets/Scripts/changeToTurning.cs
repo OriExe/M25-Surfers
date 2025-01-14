@@ -22,6 +22,7 @@ public class changeToTurning : MonoBehaviour
         {
             carAction.enabled = false;
             turingCarAction.enabled = true;
+            Destroy(carAction);
             enabled = false;
         }
     }

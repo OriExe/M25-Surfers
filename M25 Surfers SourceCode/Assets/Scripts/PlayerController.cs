@@ -28,19 +28,22 @@ public class PlayerController : MonoBehaviour
     #region PowerUps
     [Header("Powerup Values")]
     [SerializeField] private GameObject Bus; //Actually a police car
-    [SerializeField]private ParticleSystem BeerEffect;
+    [SerializeField]private GameObject BeerEffect;
     [SerializeField] private GameObject playerMesh;
+    private bool invisibility;
 
     private int InvisFrame = 0;
     public int invisibiltyFrames 
     { 
-       private get { return InvisFrame; }
+       get { return InvisFrame; }
        set 
        { 
             if (value <=0)
             {
                 normalState();
+                invisibility = true;
                 InvisFrame = value; //Puts player back to normal state
+                Invoke("invunerablEnded", 5f);
             }
             else if (value == 1) //If player picks up Bus
             {
@@ -52,7 +55,7 @@ public class PlayerController : MonoBehaviour
             else if (value > 1)
             {
                 InvisFrame = value;
-                BeerEffect.Play();
+                BeerEffect.SetActive(true);
             }
        }
             } //How much hits the player can take
@@ -166,15 +169,25 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.tag.Equals(groundTag) && invisibiltyFrames <= 0)
+        if (collision.gameObject.tag.Equals(groundTag))
+            return;
+
+        if (invisibiltyFrames <= 0 && !invisibility)
         {
             GameManager.Instance.playerDeath();
         }
 
+        if (invisibility || invisibiltyFrames > 0)
+        {
+            collision.transform.position = Vector3.forward * -50;
+        }
         if (invisibiltyFrames > 0)
         {
+            
             invisibiltyFrames--;
         }
+
+        Debug.Log(invisibiltyFrames);
     }
 
     public void playerIsDead()
@@ -187,9 +200,16 @@ public class PlayerController : MonoBehaviour
     private void normalState()
     {
         animator.enabled = true;
-        BeerEffect.Stop();
+        BeerEffect.SetActive(false);
         Bus.SetActive(false);
         playerMesh.SetActive(true);
+    }
+    /// <summary>
+    /// Player is no longer invunerable
+    /// </summary>
+    private void invunerablEnded()
+    {
+        invisibility = false;
     }
 
 }

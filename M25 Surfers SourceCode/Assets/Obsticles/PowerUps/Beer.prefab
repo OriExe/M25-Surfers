@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1182036727352969519, guid: 3bd22334418db5147bda9f1fc0f19c78,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4777522372696615308, guid: 3bd22334418db5147bda9f1fc0f19c78,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 4777522372696615308, guid: 3bd22334418db5147bda9f1fc0f19c78,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7400007
+      value: 0.661
       objectReference: {fileID: 0}
     - target: {fileID: 4777522372696615308, guid: 3bd22334418db5147bda9f1fc0f19c78,
         type: 3}
@@ -90,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3efd568123901741a65ada97e01aa89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 30
+  length: 15
   powerup: {fileID: 3003879774682915499}
 --- !u!1 &3003879774682915499 stripped
 GameObject:

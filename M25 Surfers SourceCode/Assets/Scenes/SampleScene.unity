@@ -6166,7 +6166,7 @@ MonoBehaviour:
   MaxDistance: 1.38
   jumpStrength: 14.4
   Bus: {fileID: 6452039197977345470}
-  BeerEffect: {fileID: 945797367}
+  BeerEffect: {fileID: 945797364}
   playerMesh: {fileID: 547465056}
   dustParticles: {fileID: 25035099}
   targetHorizontalPosition: 1
@@ -11500,12 +11500,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  delayBetweenObstacleSpawn: 1.86
+  delayBetweenObstacleSpawn: 2.4
   obstaclePositions:
   - {fileID: 444296466}
   - {fileID: 1274697136}
   - {fileID: 768438684}
-  obstacleSpawnDistance: 59.3
+  obstacleSpawnDistance: 34.5
   obstacleMovementSpeed: 8
   activeObstacles: []
   currentDifficulty: 1

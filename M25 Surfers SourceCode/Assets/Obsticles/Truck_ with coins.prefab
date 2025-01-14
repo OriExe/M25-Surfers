@@ -194,6 +194,11 @@ PrefabInstance:
       objectReference: {fileID: 132282614444366463}
     - target: {fileID: 4079456409566165141, guid: a79eed4aa26be214694b482af97baf38,
         type: 3}
+      propertyPath: speed
+      value: 5.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4079456409566165141, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
       propertyPath: truckHasCoins
       value: 1
       objectReference: {fileID: 0}
