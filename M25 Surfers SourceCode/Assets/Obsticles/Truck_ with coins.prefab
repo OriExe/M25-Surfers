@@ -157,6 +157,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 423666168544224390, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.3550687
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254425221630096728, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.690321
+      objectReference: {fileID: 0}
+    - target: {fileID: 1930022306498199735, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.030681
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029960777184552241, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.2418137
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995808989492247779, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.520345
+      objectReference: {fileID: 0}
+    - target: {fileID: 3004515820090233612, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.0531363
+      objectReference: {fileID: 0}
     - target: {fileID: 4079456409566165141, guid: a79eed4aa26be214694b482af97baf38,
         type: 3}
       propertyPath: coins
@@ -166,6 +196,16 @@ PrefabInstance:
         type: 3}
       propertyPath: truckHasCoins
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257700128046203421, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.690317
+      objectReference: {fileID: 0}
+    - target: {fileID: 5019477710837988642, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -2.84
       objectReference: {fileID: 0}
     - target: {fileID: 6026880677805947416, guid: a79eed4aa26be214694b482af97baf38,
         type: 3}
@@ -217,10 +257,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6434680025980852001, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.520345
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982852679424639255, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.8071723
+      objectReference: {fileID: 0}
     - target: {fileID: 7347783130161285131, guid: a79eed4aa26be214694b482af97baf38,
         type: 3}
       propertyPath: m_Name
       value: Truck_ with coins
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525269101696857204, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.490732
+      objectReference: {fileID: 0}
+    - target: {fileID: 8888123551459496954, guid: a79eed4aa26be214694b482af97baf38,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.081445
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
