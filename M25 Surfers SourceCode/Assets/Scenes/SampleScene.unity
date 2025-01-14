@@ -13405,7 +13405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   percentageThressholH: 17
-  percentageThressholV: 19
+  percentageThressholV: 12
 --- !u!4 &1734784073
 Transform:
   m_ObjectHideFlags: 0
