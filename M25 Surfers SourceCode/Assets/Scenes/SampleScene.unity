@@ -11382,6 +11382,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 739699827}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   delayBetweenObstacleSpawn: 3
   obstaclePositions:
   - {fileID: 444296466}
@@ -11562,6 +11574,7 @@ GameObject:
   - component: {fileID: 739699830}
   - component: {fileID: 739699829}
   - component: {fileID: 739699831}
+  - component: {fileID: 739699832}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -11641,6 +11654,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8e4c57bebe2c94390b0142ca65f213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &739699832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739699827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c487e519f2e764944b30906f3467ba1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 819121837}
+  HighscoreText: {fileID: 880899257}
 --- !u!1 &754433244
 GameObject:
   m_ObjectHideFlags: 0

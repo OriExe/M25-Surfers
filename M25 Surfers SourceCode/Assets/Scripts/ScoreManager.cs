@@ -68,4 +68,8 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public int getScore()
+    {
+        return Mathf.RoundToInt(score);
+    }
 }
