@@ -608,7 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDriving: 0
-  speed: 6.04
+  speed: 6.8
   rb: {fileID: 5635609610629380985}
   lighting: {fileID: 7952461950864294820}
 --- !u!95 &3188312171763069175
@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a8926c86c75724f827738f4b3a4415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6.8
+  speed: 7.5
   rb: {fileID: 5635609610629380985}
   animator: {fileID: 3188312171763069175}
   turningSpeed: 0.1
