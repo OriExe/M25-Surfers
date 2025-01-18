@@ -105,33 +105,33 @@ public class GameManager : MonoBehaviour
             return;
         GameObject temp = ObjectPool.instance.GetPooledObject();
         Debug.Log("Running 1");
-        // Are there too much obstacles
+        // Are not all objected activated yet
         if (temp != null && ObjectPool.instance.CheckCurrentActiveObsticleCount() < ObjectPool.instance.getNoOfObjects())
         {
             Debug.Log("Running 2");
 
-            int spawnedPosition = UnityEngine.Random.Range(0, 3);
+            int spawnedPosition = UnityEngine.Random.Range(0, 3); //Decides posion in playspace (left, middle, right)
 
             temp.transform.position = new Vector3(obstaclePositions[spawnedPosition].position.x, temp.transform.position.y, obstacleSpawnDistance);
 
             temp.SetActive(true);
 
-            activeObstacles.Add(temp);
+            activeObstacles.Add(temp); 
 
              //Makes the game move faster
         }
-        else if (ObjectPool.instance.CheckCurrentActiveObsticleCount() >= ObjectPool.instance.getNoOfObjects())
+        else if (ObjectPool.instance.CheckCurrentActiveObsticleCount() >= ObjectPool.instance.getNoOfObjects()) //Are all objects activated
         {
-            currentObj++;
-            currentObj = currentObj % ObjectPool.instance.getNoOfObjects();
+            currentObj++; 
+            currentObj = currentObj % ObjectPool.instance.getNoOfObjects(); //If over the length of no of objects goes back to 1 
             print(currentObj); 
 
-            temp = activeObstacles[currentObj];
+            temp = activeObstacles[currentObj]; 
             Debug.Log("Running 3");
 
             int spawnedPosition = UnityEngine.Random.Range(0, 3);
-
-            temp.transform.position = new Vector3(obstaclePositions[spawnedPosition].position.x, temp.transform.position.y, obstacleSpawnDistance);
+            //Puts object back in front
+           temp.transform.position = new Vector3(obstaclePositions[spawnedPosition].position.x, temp.transform.position.y, obstacleSpawnDistance);
         }
         try
         {

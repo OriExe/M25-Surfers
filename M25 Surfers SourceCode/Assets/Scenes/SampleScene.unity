@@ -11552,7 +11552,7 @@ MonoBehaviour:
     Amount: 6
   - Object: {fileID: 7769690492283750692, guid: 010d2f22268392841a7b8a8924ac7acf,
       type: 3}
-    Amount: 1
+    Amount: 6
   - Object: {fileID: 4251336291629136058, guid: ce2f737647167e34c930358a9978d0f3,
       type: 3}
     Amount: 4

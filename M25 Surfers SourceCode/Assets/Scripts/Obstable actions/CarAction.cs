@@ -9,6 +9,10 @@ public class CarAction : ObstableAction
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private GameObject lighting;
+
+    /// <summary>
+    /// Randomly determines if the car is driving or not (Moves faster if it is)
+    /// </summary>
     public override void action()
     {
         if (enabled == false) return;
@@ -24,7 +28,7 @@ public class CarAction : ObstableAction
             lighting.SetActive(true);
         }
     }
-
+    
     private void Update()
     {
         if (isDriving)
